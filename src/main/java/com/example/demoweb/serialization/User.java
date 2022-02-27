@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class User implements Serializable {
+    public User() {
+    }
+
     private static final long serialVersionUID = 1L;
     int id;
     String name;
