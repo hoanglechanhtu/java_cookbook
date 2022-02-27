@@ -9,6 +9,36 @@ public class User implements Serializable {
     int id;
     String name;
     List<String>  habits;
+    List<User> friends;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", habits=" + habits +
+                ", friends=" + friends +
+                ", position=" + position +
+                '}';
+    }
+
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
+
+    public User(int id, String name, List<String> habits, List<User> friends) {
+        this.id = id;
+        this.name = name;
+        this.habits = habits;
+        this.friends = friends;
+        Random random = new Random();
+        position = new Position(random.nextInt(100), random.nextInt(100));
+    }
+
     Position position;
     public List<String> getHabits() {
         return habits;
@@ -50,13 +80,4 @@ public class User implements Serializable {
         this.position = position;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", habits=" + habits +
-                ", position=" + position +
-                '}';
-    }
 }
